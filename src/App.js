@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
+import './index.css';
+import Navbar from './components/Navbar';
+import Books from './components/Books';
+import Card from './components/Card';
 
-function App() {
+const App = () => {
+  const[videos,setVideos] = useState([])
+  const [arr,setarr] = useState([])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='main'>
+    <Navbar setVideos = {setVideos} setarr={setarr}/>
+    <Card arr={arr}/>
+    <Books videos = {videos} />
+    
     </div>
-  );
+  )
 }
-
-export default App;
+export default App
